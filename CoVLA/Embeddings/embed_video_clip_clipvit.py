@@ -188,9 +188,9 @@ def main():
 
                 if use_amp:
                     with torch.cuda.amp.autocast(dtype=torch.float16):
-                        img_feats = model.get_image_features(pixel_values=pixel_values)
+                        img_feats = model.get_image_features(pixel_values=pixel_values).pooler_output
                 else:
-                    img_feats = model.get_image_features(pixel_values=pixel_values)
+                    img_feats = model.get_image_features(pixel_values=pixel_values).pooler_output
 
                 img_feats = img_feats / img_feats.norm(dim=-1, keepdim=True).clamp_min(1e-12)
 
