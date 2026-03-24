@@ -2,12 +2,12 @@ import os
 import json
 from pathlib import Path
 
-VIDEO_DIR = Path(r"D:\hf\hub\datasets--turing-motors--CoVLA-Dataset\snapshots\0a6d39e41659903a26dde957744e70dbc360bb6d\videos")
+VIDEO_DIR = Path(r"D:\hf\hub\datasets--turing-motors--CoVLA-Dataset\snapshots\0a6d39e41659903a26dde957744e70dbc360bb6d\videos\old_batch")
 CAPTIONS_DIR = Path(r"D:\hf\CoVLA-metadata\captions")
 STATES_DIR = Path(r"D:\hf\CoVLA-metadata\states")
 
-OUT_PATH = Path(r"D:\hf\CoVLA-metadata\manifest.jsonl")
-REPORT_PATH = Path(r"D:\hf\CoVLA-metadata\manifest_report.json")
+OUT_PATH = Path(r"D:\hf\CoVLA-metadata\old_manifest.jsonl")
+REPORT_PATH = Path(r"D:\hf\CoVLA-metadata\old_manifest_report.json")
 
 # It will only include clips that exist in VIDEO_DIR (downloaded portion).
 ONLY_LOCAL_VIDEOS = True

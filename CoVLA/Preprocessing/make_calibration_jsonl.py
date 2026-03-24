@@ -106,7 +106,7 @@ def main():
     examples_not_constant = []
     examples_missing_states = []
 
-    with IN_MANIFEST.open("r", encoding="utf-8") as fin, OUT_CALIB.open("w", encoding="utf-8") as fout:
+    with IN_MANIFEST.open("r", encoding="utf-8") as fin, OUT_CALIB.open("a", encoding="utf-8") as fout:
         for line in fin:
             line = line.strip()
             if not line:
@@ -161,7 +161,7 @@ def main():
         "rtol": RTOL,
     }
 
-    with OUT_REPORT.open("w", encoding="utf-8") as f:
+    with OUT_REPORT.open("a", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
     print("Done.")

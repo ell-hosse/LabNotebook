@@ -31,6 +31,7 @@ USE_FP16 = True
 def get_downsampled_frame_indices() -> List[int]:
     return list(range(0, N_FRAMES_PER_CLIP, FRAME_STEP))[:DOWNSAMPLED_FRAMES]
 
+
 def load_clip_index(index_path: Path) -> List[Tuple[str, int]]:
     assert index_path.exists(), f"clip_index not found: {index_path}"
     pairs = []
@@ -63,6 +64,7 @@ def _extract_captions_list(rec: dict) -> Optional[List[str]]:
     # Sometimes: "caption" as list or dict
     if isinstance(rec.get("caption"), list):
         return [str(c) for c in rec["caption"]]
+
 
     # Sometimes: caption_0..caption_9
     caps = []
