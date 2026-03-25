@@ -34,7 +34,7 @@ def extract_velocity():
                         break
                     if i in frame_indices:
                         state = json.loads(line)
-                        clip_velocities[frame_indices.index(i)] = state[f"{i}"]
+                        clip_velocities[frame_indices.index(i)] = state[f"{i}"]["vEgo"]
 
             velocities.append(clip_velocities)
 
