@@ -70,12 +70,12 @@ def main():
     traj = traj_jsonl_2_num()
     traj = torch.from_numpy(traj).float()
 
-    for i in range(5):
-        print(i)
-        print("embedding norm:", fused_embeddings[i].norm().item())
-        print("traj norm:", traj[i].norm().item())
+    fused_embeddings = fused_embeddings.reshape(-1, 512)
+    traj = traj.reshape(-1, 10, 3)
 
-    dataset = TensorDataset(fused_embeddings[: 2248], traj[: 2248])
+    print(fused_embeddings.shape, traj.shape)
+
+    dataset = TensorDataset(fused_embeddings, traj)
 
     split_path = Path(r"D:\hf\CoVLA-metadata\data_splits.pt")
 
